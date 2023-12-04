@@ -109,11 +109,17 @@ class LoginPage extends StatelessWidget {
           VerticalGap(
             gap: 30.h,
           ),
-          CustomElevatedButton(
-            onTab: () {},
-            borderRadius: 10,
-            text: AppString.signIn,
-            textColor: AppColor.colorWhite,
+          SizedBox(
+            width: double.infinity,
+            height: 50.h,
+            child: CustomElevatedButton(
+              onTab: () {},
+              borderRadius: 10,
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              text: AppString.signIn,
+              textColor: AppColor.colorWhite,
+            ),
           ),
           const Spacer(),
           socialLogin(),
