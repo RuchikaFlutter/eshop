@@ -26,7 +26,7 @@ class TextDesign extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines ?? 100,
       style: GoogleFonts.lato(
-        color: color ?? AppColor.colorBlack,
+        color: color ?? AppColor.colorText,
         fontWeight: fontWeight ?? FontWeight.w500,
         fontSize: fontSize?.sp ?? 16.sp,
       ),
