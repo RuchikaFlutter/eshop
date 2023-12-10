@@ -48,7 +48,7 @@ class LoginPage extends StatelessWidget {
           topRight: Radius.circular(20.r),
         ),
       ),
-      child: Column(
+      child: ListView(
         children: [
           VerticalGap(
             gap: 30.h,
