@@ -6,5 +6,6 @@ class AppString {
   static const String password = 'Password';
   static const String forgetPassword = 'Forget Password?';
   static const String orContinueWith = 'Or Continue With';
+  static const String eShop = 'E-Shop';
 
 }

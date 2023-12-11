@@ -1,7 +1,8 @@
-import 'package:e_shop/utils/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../utils/app_color.dart';
 
 class TextDesign extends StatelessWidget {
   String? text;

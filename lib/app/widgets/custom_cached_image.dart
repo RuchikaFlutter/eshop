@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_shop/utils/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../utils/app_image.dart';
 
 class CustomCachedImage extends StatelessWidget {
   String imageUrl;

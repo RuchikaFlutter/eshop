@@ -1,17 +1,30 @@
-import 'package:e_shop/utils/app_color.dart';
-import 'package:e_shop/utils/app_string.dart';
-import 'package:e_shop/widgets/custom_elevated_button.dart';
-import 'package:e_shop/widgets/gap.dart';
-import 'package:e_shop/widgets/text_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+import '../../../utils/app_color.dart';
+import '../../../utils/app_string.dart';
+import '../../../widgets/custom_elevated_button.dart';
+import '../../../widgets/gap.dart';
+import '../../../widgets/text_design.dart';
+import '../controllers/login_controller.dart';
 
-  Widget firstContainerForBackground() {
+class LoginView extends GetView<LoginController> {
+  const LoginView({Key? key}) : super(key: key);
+
+  Widget _ui() {
+    return Stack(
+      children: [
+        _firstContainerForBackground(),
+        _secondContainerForLoginDetail(),
+      ],
+    );
+  }
+
+  Widget _firstContainerForBackground() {
     return Container(
       width: double.infinity,
       height: 500.h,
@@ -29,7 +42,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget secondContainerForLoginDetail() {
+  Widget _secondContainerForLoginDetail() {
     return Container(
       margin: EdgeInsets.only(
         top: 150.h,
@@ -122,13 +135,13 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Spacer(),
-          socialLogin(),
+          _socialLogin(),
         ],
       ),
     );
   }
 
-  Widget socialLogin() {
+  Widget _socialLogin() {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 30.h,
@@ -153,12 +166,8 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.colorLoginBackground,
-      body: Stack(
-        children: [
-          firstContainerForBackground(),
-          secondContainerForLoginDetail(),
-        ],
-      ),
+      body: _ui(),
     );
   }
+
 }

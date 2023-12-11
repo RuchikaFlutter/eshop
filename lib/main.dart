@@ -1,10 +1,10 @@
-import 'package:e_shop/modules/Home%20Module/home_page.dart';
+import 'package:e_shop/app/modules/home/views/home_view.dart';
+import 'package:e_shop/app/modules/product_list/views/product_list_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'modules/Login Module/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: HomePage(),
+      child: ProductListView(),
     );
   }
 }
