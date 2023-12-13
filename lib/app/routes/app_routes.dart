@@ -5,14 +5,20 @@ abstract class Routes {
   Routes._();
   static const LOGIN = _Paths.LOGIN;
   static const HOME = _Paths.HOME;
-  static const PRODUCT_LIST = _Paths.PRODUCT_LIST;
   static const SPLASH_SCREEN = _Paths.SPLASH_SCREEN;
+  static const PRODUCT_DETAIL = _Paths.PRODUCT_DETAIL;
+  static const ADD_A_PRODUCT = _Paths.ADD_A_PRODUCT;
+  static const UPDATE_A_PRODUCT = _Paths.UPDATE_A_PRODUCT;
+  static const DELETE_A_PRODUCT = _Paths.DELETE_A_PRODUCT;
 }
 
 abstract class _Paths {
   _Paths._();
   static const LOGIN = '/login';
   static const HOME = '/home';
-  static const PRODUCT_LIST = '/product-list';
   static const SPLASH_SCREEN = '/splash-screen';
+  static const PRODUCT_DETAIL = '/product-detail';
+  static const ADD_A_PRODUCT = '/add-a-product';
+  static const UPDATE_A_PRODUCT = '/update-a-product';
+  static const DELETE_A_PRODUCT = '/delete-a-product';
 }

@@ -1,9 +1,12 @@
 import 'package:e_shop/app/modules/home/views/home_view.dart';
-import 'package:e_shop/app/modules/product_list/views/product_list_view.dart';
+import 'package:e_shop/app/modules/product_detail/views/product_detail_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
+import 'app/routes/app_pages.dart';
 
 
 void main() {
@@ -24,12 +27,14 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           home: child,
+          initialRoute: AppPages.INITIAL,
+          getPages: AppPages.routes,
         );
       },
-      child: ProductListView(),
+      child: HomeView(),
     );
   }
 }

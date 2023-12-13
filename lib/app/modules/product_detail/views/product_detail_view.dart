@@ -1,21 +1,17 @@
-import 'package:e_shop/app/utils/app_color.dart';
-import 'package:e_shop/app/widgets/custom_cached_image.dart';
-import 'package:e_shop/app/widgets/gap.dart';
-import 'package:e_shop/app/widgets/text_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/product_list_controller.dart';
+import '../../../utils/app_color.dart';
+import '../../../widgets/custom_cached_image.dart';
+import '../../../widgets/gap.dart';
+import '../../../widgets/text_design.dart';
+import '../controllers/product_detail_controller.dart';
 
-class ProductListView extends GetView<ProductListController> {
+class ProductDetailView extends GetView<ProductDetailController> {
   String? title;
-
-  ProductListView({
-    Key? key,
-    this.title = 'Title',
-  }) : super(key: key);
+  ProductDetailView({Key? key, this.title = ''}) : super(key: key);
 
   Widget _ui() {
     return ListView(

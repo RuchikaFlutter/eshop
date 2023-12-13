@@ -74,6 +74,8 @@ class LoginView extends GetView<LoginController> {
           VerticalGap(
             gap: 50.h,
           ),
+
+          ///Email Text Field
           TextField(
             style: GoogleFonts.lato(
               color: AppColor.colorText,
@@ -91,6 +93,8 @@ class LoginView extends GetView<LoginController> {
           VerticalGap(
             gap: 20.h,
           ),
+
+          ///Password Text Field
           TextField(
             style: GoogleFonts.lato(
               color: AppColor.colorText,
@@ -122,6 +126,8 @@ class LoginView extends GetView<LoginController> {
           VerticalGap(
             gap: 30.h,
           ),
+
+          ///Sign In Button
           SizedBox(
             width: double.infinity,
             height: 50.h,
@@ -153,10 +159,7 @@ class LoginView extends GetView<LoginController> {
           ),
           VerticalGap(),
           IconButton(
-              icon: const FaIcon(FontAwesomeIcons.google),
-              onPressed: () {
-                print("Pressed");
-              }),
+              icon: const FaIcon(FontAwesomeIcons.google), onPressed: () {}),
         ],
       ),
     );
@@ -169,5 +172,4 @@ class LoginView extends GetView<LoginController> {
       body: _ui(),
     );
   }
-
 }

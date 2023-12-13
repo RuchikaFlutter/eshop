@@ -1,8 +1,11 @@
+import 'package:e_shop/app/modules/home/views/component/custom_drawer.dart';
+import 'package:e_shop/app/utils/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../utils/app_color.dart';
 import '../../../utils/app_string.dart';
 import '../../../widgets/custom_cached_image.dart';
@@ -29,52 +32,57 @@ class HomeView extends GetView<HomeController> {
   }
 
   Widget _listDesign({required int index}) => Container(
-    padding: EdgeInsets.symmetric(
-      horizontal: 15.w,
-      vertical: 15.h,
-    ),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(15.r),
-      gradient: LinearGradient(colors: [
-        AppColor.colorC06496.withOpacity(0.3),
-        AppColor.colorC06496.withOpacity(0.65),
-      ],
-          begin: Alignment.topCenter
-      ),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(15.r),
-            topRight: Radius.circular(15.r),
-          ),
-          child: CustomCachedImage(
-            width: double.infinity,
-            height: 150.h,
-            imageUrl:
-            'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
-          ),
+        padding: EdgeInsets.symmetric(
+          horizontal: 15.w,
+          vertical: 15.h,
         ),
-        VerticalGap(),
-        TextDesign(
-          text: 'text',
-          fontSize: 24,
-          fontWeight: FontWeight.w700,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.r),
+          gradient: LinearGradient(colors: [
+            AppColor.colorC06496.withOpacity(0.3),
+            AppColor.colorC06496.withOpacity(0.65),
+          ], begin: Alignment.topCenter),
         ),
-        VerticalGap(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15.r),
+                topRight: Radius.circular(15.r),
+              ),
+              child: CustomCachedImage(
+                width: double.infinity,
+                height: 150.h,
+                imageUrl:
+                    'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+              ),
+            ),
+            VerticalGap(),
+            TextDesign(
+              text: 'text',
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            ),
+            VerticalGap(),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextDesign(
-                  text: '\$200',
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+                Row(
+                  children: [
+                    TextDesign(
+                      text: '\$200',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    HorizontalGap(),
+                    TextDesign(
+                      text: '10%',
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
                 ),
-                HorizontalGap(),
                 TextDesign(
                   text: '10%',
                   fontSize: 20,
@@ -82,21 +90,14 @@ class HomeView extends GetView<HomeController> {
                 ),
               ],
             ),
-            TextDesign(
-              text: '10%',
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
           ],
         ),
-      ],
-    ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: CustomDrawer(),
       appBar: AppBar(
         title: TextDesign(
           text: AppString.eShop,
@@ -109,5 +110,4 @@ class HomeView extends GetView<HomeController> {
       body: _ui(),
     );
   }
-
 }
