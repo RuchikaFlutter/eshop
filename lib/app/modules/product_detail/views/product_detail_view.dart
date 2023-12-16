@@ -9,6 +9,7 @@ import '../../../widgets/gap.dart';
 import '../../../widgets/text_design.dart';
 import '../controllers/product_detail_controller.dart';
 
+// ignore: must_be_immutable
 class ProductDetailView extends GetView<ProductDetailController> {
   String? title;
   ProductDetailView({Key? key, this.title = ''}) : super(key: key);

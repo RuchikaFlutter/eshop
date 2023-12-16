@@ -66,10 +66,12 @@ class LoginView extends GetView<LoginController> {
           VerticalGap(
             gap: 30.h,
           ),
-          TextDesign(
-            text: AppString.signIn,
-            fontSize: 24,
-            fontWeight: FontWeight.w600,
+          Center(
+            child: TextDesign(
+              text: AppString.signIn,
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+            ),
           ),
           VerticalGap(
             gap: 50.h,
@@ -80,14 +82,24 @@ class LoginView extends GetView<LoginController> {
             style: GoogleFonts.lato(
               color: AppColor.colorText,
             ),
+            cursorColor: AppColor.color984997,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
+                borderSide: const BorderSide(
+                  color: AppColor.color984997,
+                ),
+              ),
+              hintText: AppString.email,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: const BorderSide(
+                  color: AppColor.color984997,
+                ),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
               ),
-              labelText: AppString.email,
             ),
           ),
           VerticalGap(
@@ -99,11 +111,24 @@ class LoginView extends GetView<LoginController> {
             style: GoogleFonts.lato(
               color: AppColor.colorText,
             ),
+            cursorColor: AppColor.color984997,
             decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: const BorderSide(
+                  color: AppColor.color984997,
+                ),
+              ),
+              hintText: AppString.password,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5.r),
+                borderSide: const BorderSide(
+                  color: AppColor.color984997,
+                ),
+              ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
               ),
-              labelText: AppString.password,
             ),
           ),
           VerticalGap(
@@ -130,9 +155,9 @@ class LoginView extends GetView<LoginController> {
           ///Sign In Button
           SizedBox(
             width: double.infinity,
-            height: 50.h,
+            height: 55.h,
             child: CustomElevatedButton(
-              onTab: () {},
+              onTab: () => controller.onTapSignIn(),
               borderRadius: 10,
               fontSize: 20,
               fontWeight: FontWeight.w600,

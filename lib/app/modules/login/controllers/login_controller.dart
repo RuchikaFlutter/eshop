@@ -1,3 +1,4 @@
+import 'package:e_shop/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
@@ -17,6 +18,10 @@ class LoginController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void onTapSignIn() {
+    Get.offAndToNamed(Routes.HOME);
   }
 
   void increment() => count.value++;

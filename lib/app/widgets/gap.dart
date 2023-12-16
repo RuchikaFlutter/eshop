@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// ignore: must_be_immutable
 class VerticalGap extends StatelessWidget {
-  double gap;
+  double? gap;
 
-  VerticalGap({super.key, this.gap = 10});
+  VerticalGap({super.key, this.gap});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: gap.h,
+      height: gap?.h ?? 10.h,
     );
   }
 }
 
+// ignore: must_be_immutable
 class HorizontalGap extends StatelessWidget {
-  double gap;
+  double? gap;
 
-  HorizontalGap({super.key, this.gap = 10});
+  HorizontalGap({super.key, this.gap});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: gap.w,
+      width: gap?.w ?? 10.w,
     );
   }
 }

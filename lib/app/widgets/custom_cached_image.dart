@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../utils/app_image.dart';
 
+// ignore: must_be_immutable
 class CustomCachedImage extends StatelessWidget {
   String imageUrl;
   double? width;

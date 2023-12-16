@@ -1,11 +1,9 @@
 import 'package:e_shop/app/modules/home/views/component/custom_drawer.dart';
-import 'package:e_shop/app/utils/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
-import '../../../routes/app_pages.dart';
 import '../../../utils/app_color.dart';
 import '../../../utils/app_string.dart';
 import '../../../widgets/custom_cached_image.dart';

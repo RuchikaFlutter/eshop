@@ -1,4 +1,5 @@
 import 'package:e_shop/app/widgets/text_design.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
