@@ -37,8 +37,8 @@ class HomeView extends GetView<HomeController> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.r),
           gradient: LinearGradient(colors: [
-            AppColor.colorC06496.withOpacity(0.3),
-            AppColor.colorC06496.withOpacity(0.65),
+            AppColor.color0E101B.withOpacity(0.3),
+            AppColor.color0E101B.withOpacity(0.65),
           ], begin: Alignment.topCenter),
         ),
         child: Column(
@@ -103,7 +103,7 @@ class HomeView extends GetView<HomeController> {
           fontSize: 20,
           color: AppColor.colorWhite,
         ),
-        backgroundColor: AppColor.colorC06496,
+        backgroundColor: AppColor.color0E101B,
       ),
       body: _ui(),
     );

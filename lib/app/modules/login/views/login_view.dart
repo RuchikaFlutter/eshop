@@ -31,9 +31,9 @@ class LoginView extends GetView<LoginController> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            AppColor.colorC06496.withOpacity(0.7),
-            AppColor.colorC06496.withOpacity(0.6),
-            AppColor.color984997.withOpacity(0.9),
+            AppColor.color0E101B.withOpacity(0.7),
+            AppColor.color0E101B.withOpacity(0.6),
+            AppColor.color262c44.withOpacity(0.9),
           ],
           begin: Alignment.topCenter,
           end: Alignment.center,
@@ -82,19 +82,19 @@ class LoginView extends GetView<LoginController> {
             style: GoogleFonts.lato(
               color: AppColor.colorText,
             ),
-            cursorColor: AppColor.color984997,
+            cursorColor: AppColor.color262c44,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
                 borderSide: const BorderSide(
-                  color: AppColor.color984997,
+                  color: AppColor.color262c44,
                 ),
               ),
               hintText: AppString.email,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
                 borderSide: const BorderSide(
-                  color: AppColor.color984997,
+                  color: AppColor.color262c44,
                 ),
               ),
               border: OutlineInputBorder(
@@ -111,19 +111,19 @@ class LoginView extends GetView<LoginController> {
             style: GoogleFonts.lato(
               color: AppColor.colorText,
             ),
-            cursorColor: AppColor.color984997,
+            cursorColor: AppColor.color262c44,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
                 borderSide: const BorderSide(
-                  color: AppColor.color984997,
+                  color: AppColor.color262c44,
                 ),
               ),
               hintText: AppString.password,
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.r),
                 borderSide: const BorderSide(
-                  color: AppColor.color984997,
+                  color: AppColor.color262c44,
                 ),
               ),
               border: OutlineInputBorder(

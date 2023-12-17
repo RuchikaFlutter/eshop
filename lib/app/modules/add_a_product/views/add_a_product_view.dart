@@ -1,3 +1,4 @@
+import 'package:e_shop/app/widgets/custom_elevated_button.dart';
 import 'package:e_shop/app/widgets/gap.dart';
 import 'package:e_shop/app/widgets/label.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.pNameController,
+          cursorColor: AppColor.color262c44,
           inputFormatters: [
             FilteringTextInputFormatter.allow(
                 RegExp(r'[a-z A-Z0-9!@#\$%^&*(),.?":{}|<>]')),
@@ -37,14 +39,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -63,20 +65,21 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.descriptionController,
+          cursorColor: AppColor.color262c44,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -95,7 +98,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.priceController,
+          cursorColor: AppColor.color262c44,
           keyboardType: TextInputType.number,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
@@ -104,14 +108,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -130,7 +134,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.discountController,
+          cursorColor: AppColor.color262c44,
           keyboardType: TextInputType.number,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
@@ -139,14 +144,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -165,7 +170,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.brandController,
+          cursorColor: AppColor.color262c44,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[a-z A-Z]')),
           ],
@@ -173,14 +179,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -199,7 +205,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.categoryController,
+          cursorColor: AppColor.color262c44,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[a-z A-Z]')),
           ],
@@ -207,14 +214,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -233,7 +240,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.ratingController,
+          cursorColor: AppColor.color262c44,
           keyboardType: TextInputType.number,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
@@ -242,14 +250,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -268,7 +276,8 @@ class AddAProductView extends GetView<AddAProductController> {
           style: GoogleFonts.lato(
             color: AppColor.colorText,
           ),
-          cursorColor: AppColor.color984997,
+          controller: controller.stockController,
+          cursorColor: AppColor.color262c44,
           keyboardType: TextInputType.number,
           inputFormatters: [
             FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
@@ -277,14 +286,14 @@ class AddAProductView extends GetView<AddAProductController> {
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             hintText: AppString.enter,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.r),
               borderSide: const BorderSide(
-                color: AppColor.color984997,
+                color: AppColor.color262c44,
               ),
             ),
             border: OutlineInputBorder(
@@ -293,7 +302,12 @@ class AddAProductView extends GetView<AddAProductController> {
           ),
         ),
         VerticalGap(
-          gap: 20,
+          gap: 40,
+        ),
+        CustomElevatedButton(
+          onTab: () => controller.onSubmit(),
+          text: AppString.submit,
+          textColor: AppColor.colorWhite,
         ),
       ],
     );
@@ -309,7 +323,7 @@ class AddAProductView extends GetView<AddAProductController> {
           fontSize: 20,
           color: AppColor.colorWhite,
         ),
-        backgroundColor: AppColor.colorC06496,
+        backgroundColor: AppColor.color0E101B,
       ),
       body: _ui(),
     );

@@ -43,12 +43,18 @@ class CustomElevatedButton extends StatelessWidget {
           ),
         ),
         side: BorderSide(
-          color: borderColor ?? AppColor.color984997,
+          color: borderColor ?? AppColor.color262c44,
         ),
-        backgroundColor: buttonBackGround ?? AppColor.color984997,
-        padding: padding ?? EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
+        backgroundColor: buttonBackGround ?? AppColor.color262c44,
+        padding:
+            padding ?? EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
       ),
-      child: TextDesign(text: text, fontWeight: fontWeight, fontSize: fontSize, color: textColor,),
+      child: TextDesign(
+        text: text,
+        fontWeight: fontWeight ?? FontWeight.w600,
+        fontSize: fontSize ?? 18.sp,
+        color: textColor,
+      ),
     );
   }
 }

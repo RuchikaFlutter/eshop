@@ -1,23 +1,93 @@
+import 'package:e_shop/app/utils/app_color.dart';
+import 'package:e_shop/app/utils/app_string.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AddAProductController extends GetxController {
-  //TODO: Implement AddAProductController
+  late TextEditingController pNameController;
+  late TextEditingController descriptionController;
+  late TextEditingController priceController;
+  late TextEditingController discountController;
+  late TextEditingController brandController;
+  late TextEditingController categoryController;
+  late TextEditingController ratingController;
+  late TextEditingController stockController;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
+    pNameController = TextEditingController();
+    descriptionController = TextEditingController();
+    priceController = TextEditingController();
+    discountController = TextEditingController();
+    brandController = TextEditingController();
+    categoryController = TextEditingController();
+    ratingController = TextEditingController();
+    stockController = TextEditingController();
   }
 
   @override
   void onClose() {
     super.onClose();
+    pNameController.dispose();
+    descriptionController.dispose();
+    priceController.dispose();
+    discountController.dispose();
+    brandController.dispose();
+    categoryController.dispose();
+    ratingController.dispose();
+    stockController.dispose();
   }
 
-  void increment() => count.value++;
+  void onSubmit() {
+    if (pNameController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterProductName,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (descriptionController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterDescription,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (priceController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterPrice,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (discountController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterPercentageDiscount,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (brandController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterBrand,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (categoryController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterCategory,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (ratingController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterRatings,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else if (stockController.text.trim().isEmpty) {
+      Get.snackbar(
+        AppString.error,
+        AppString.pleaseEnterStock,
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else {}
+  }
 }

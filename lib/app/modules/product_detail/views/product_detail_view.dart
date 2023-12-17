@@ -89,7 +89,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.colorC06496,
+        backgroundColor: AppColor.color0E101B,
         title: TextDesign(
           text: title,
           fontSize: 20,
