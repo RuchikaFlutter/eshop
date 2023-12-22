@@ -1,4 +1,3 @@
-import 'package:e_shop/app/utils/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,11 +27,13 @@ class SplashScreenView extends GetView<SplashScreenController> {
         alignment: Alignment.center,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20.r),
-          child: Image.asset(
-            AppImage.logo,
-            width: Get.width * 0.4,
-            height: Get.width * 0.4,
-          ),
+          child: Obx(() {
+            return Image.asset(
+              controller.image.toString(),
+              width: Get.width * 0.4,
+              height: Get.width * 0.4,
+            );
+          }),
         ),
       ),
     );

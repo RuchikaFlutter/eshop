@@ -39,6 +39,8 @@ class HomeController extends GetxController {
       case AppString.signOut:
         Get.toNamed(Routes.LOGIN);
         break;
+      case AppString.productDetail:
+        Get.toNamed(Routes.PRODUCT_DETAIL);
       default:
         Get.back();
     }

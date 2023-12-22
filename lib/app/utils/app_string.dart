@@ -1,5 +1,4 @@
 class AppString {
-
   static const String signIn = 'Sign In';
   static const String signUp = 'Sign Up';
   static const String signOut = 'Sign Out';
@@ -13,6 +12,8 @@ class AppString {
   static const String updateAProduct = 'Update Product';
   static const String deleteAProduct = 'Delete Product';
   static const String productName = 'Product Name';
+  static const String productDetail = 'Product Detail';
+  static const String productID = 'Product ID';
   static const String price = 'Price';
   static const String description = 'Description';
   static const String percentageDiscount = 'Percentage Discount';
@@ -28,10 +29,27 @@ class AppString {
   static const String pleaseEnterProductName = 'Please enter Product name';
   static const String pleaseEnterDescription = 'Please enter Description';
   static const String pleaseEnterPrice = 'Please enter Price';
-  static const String pleaseEnterPercentageDiscount = 'Please enter Percentage discount';
+  static const String pleaseEnterPercentageDiscount =
+      'Please enter Percentage discount';
   static const String pleaseEnterBrand = 'Please enter Brand';
   static const String pleaseEnterCategory = 'Please enter Category';
   static const String pleaseEnterRatings = 'Please enter Ratings';
   static const String pleaseEnterStock = 'Please enter Stock';
+  static const String pleaseEnterProductID = 'Please enter Product ID';
 
+
+  ///API Error
+  static const String serverTimeoutError = 'Server Timeout!';
+  static const String serverTimeoutErrorDetails =
+      'Server timeout. Please try again later.';
+  static const String serverError = 'Server Error Occured!';
+  static const String serverErrorDetails =
+      'Server is not responding. Please try again later.';
+  static const String noInternet = 'No Internet Connection!';
+  static const String noInternetDetails =
+      'Please check your Internet connectivity and try again.';
+  static const String errorOccurred = 'Error Occurred!';
+  static const String unknownErrorDetails =
+      'Something went wrong. Please try again later.';
+  static const String serverInvalidTokenError = 'Session expired';
 }
