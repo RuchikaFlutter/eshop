@@ -2,19 +2,18 @@ import 'package:e_shop/app/routes/app_pages.dart';
 import 'package:e_shop/app/utils/app_string.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  //TODO: Implement HomeController
+import '../../../model/product_list_model.dart';
+import '../../../network/api_client.dart';
 
-  final count = 0.obs;
+class HomeController extends GetxController {
+
+  final _apiHelper = Get.find<ApiClient>();
+  RxList<Product>? products = <Product>[].obs;
 
   @override
   void onInit() {
+    getProductList();
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
   }
 
   @override
@@ -22,7 +21,7 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void navigate(String routeName) {
+  void navigate(String routeName, {int? index}) {
     switch (routeName) {
       case AppString.addAProduct:
         Get.back();
@@ -40,9 +39,20 @@ class HomeController extends GetxController {
         Get.toNamed(Routes.LOGIN);
         break;
       case AppString.productDetail:
-        Get.toNamed(Routes.PRODUCT_DETAIL);
+        Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {'productName': products?[index!].title});
       default:
         Get.back();
+    }
+  }
+
+  Future getProductList() async {
+    final response = await _apiHelper.productList();
+
+    if (response != null) {
+      final data = ProductListModel.fromJson(response.data);
+      products?.value = data.products ?? [];
+    } else {
+      ///Add Snackbar
     }
   }
 }

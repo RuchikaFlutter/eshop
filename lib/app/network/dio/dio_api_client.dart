@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:e_shop/app/network/dio/dio_extension.dart';
 import 'package:e_shop/app/utils/api_constant.dart';
 import 'package:flutter/foundation.dart';
 
 import '../api_client.dart';
-
 
 class DioApiClient implements ApiClient {
   DioApiClient() {
@@ -84,6 +84,12 @@ class DioApiClient implements ApiClient {
   //   return response;
   // }
 
-
-
+  @override
+  Future<Response?> productList() async {
+    _removeAuthorizationTokenFromHeader();
+    final response = await _dio.getApi(
+      ApiConstant.productList,
+    );
+    return response;
+  }
 }

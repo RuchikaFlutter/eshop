@@ -11,8 +11,7 @@ import '../controllers/product_detail_controller.dart';
 
 // ignore: must_be_immutable
 class ProductDetailView extends GetView<ProductDetailController> {
-  String? title;
-  ProductDetailView({Key? key, this.title = ''}) : super(key: key);
+  const ProductDetailView({Key? key,}) : super(key: key);
 
   Widget _ui() {
     return ListView(
@@ -90,12 +89,15 @@ class ProductDetailView extends GetView<ProductDetailController> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.color0E101B,
-        title: TextDesign(
-          text: title,
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: AppColor.colorWhite,
-        ),
+        title: Obx(() {
+          return TextDesign(
+            text: controller.name.value ?? '',
+            fontSize: 20,
+            maxLines: 1,
+            fontWeight: FontWeight.w700,
+            color: AppColor.colorWhite,
+          );
+        }),
       ),
       body: _ui(),
     );

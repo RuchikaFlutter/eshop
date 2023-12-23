@@ -48,10 +48,6 @@ extension DioExtension on Dio {
       get_package.Get.context!.loaderOverlay.hide();
     }
 
-    //  _showErrorSnacbarWhenStatusCodeIs200(response);
-
-    //_showErrorSnacbarWhenStatusCodeIs401(response);
-
     return response;
   }
 

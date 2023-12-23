@@ -15,23 +15,28 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
   Widget _ui() {
-    return ListView.separated(
-      shrinkWrap: true,
-      padding: EdgeInsets.symmetric(
-        horizontal: 15.w,
-        vertical: 15.h,
-      ),
-      itemBuilder: (context, index) => _listDesign(index: index),
-      separatorBuilder: (context, index) => VerticalGap(
-        gap: 15.h,
-      ),
-      itemCount: 5,
-    );
+    return Obx(() {
+      return ListView.separated(
+        shrinkWrap: true,
+        padding: EdgeInsets.symmetric(
+          horizontal: 15.w,
+          vertical: 15.h,
+        ),
+        itemBuilder: (context, index) => _listDesign(index: index),
+        separatorBuilder: (context, index) => VerticalGap(
+          gap: 15.h,
+        ),
+        itemCount: controller.products?.length ?? 0,
+      );
+    });
   }
 
   Widget _listDesign({required int index}) => GestureDetector(
-    onTap: () => controller.navigate(AppString.productDetail,),
-    child: Container(
+        onTap: () => controller.navigate(
+          AppString.productDetail,
+          index: index,
+        ),
+        child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: 15.w,
             vertical: 15.h,
@@ -54,13 +59,12 @@ class HomeView extends GetView<HomeController> {
                 child: CustomCachedImage(
                   width: double.infinity,
                   height: 150.h,
-                  imageUrl:
-                      'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+                  imageUrl: controller.products?[index].thumbnail ?? '',
                 ),
               ),
               VerticalGap(),
               TextDesign(
-                text: 'text',
+                text: controller.products?[index].title,
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
               ),
@@ -71,20 +75,21 @@ class HomeView extends GetView<HomeController> {
                   Row(
                     children: [
                       TextDesign(
-                        text: '\$200',
+                        text: '\$${controller.products?[index].price}',
                         fontSize: 18,
                         fontWeight: FontWeight.w600,
                       ),
                       HorizontalGap(),
                       TextDesign(
-                        text: '10%',
+                        text:
+                            '${controller.products?[index].discountPercentage}%',
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
                       ),
                     ],
                   ),
                   TextDesign(
-                    text: '10%',
+                    text: '⭐${controller.products?[index].rating.toString()}',
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
                   ),
@@ -93,7 +98,7 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
         ),
-  );
+      );
 
   @override
   Widget build(BuildContext context) {

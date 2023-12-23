@@ -6,4 +6,6 @@ abstract class ApiClient {
 
   //Future<Response?> login(Map<String, String> request);
 
+  Future<Response?> productList();
+
 }

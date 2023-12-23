@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:loader_overlay/loader_overlay.dart';
 
+import 'app/network/api_client.dart';
+import 'app/network/dio/dio_api_client.dart';
+import 'app/network/internet_check.dart';
 import 'app/routes/app_pages.dart';
 import 'app/widgets/notification_service.dart';
 
@@ -47,6 +51,21 @@ Future<void> main() async {
   NotificationService.setUpInteractMessage();
   NotificationService.getDeviceToken();
 
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
+
+  Get.lazyPut(
+        () => NetworkConnectivity(),
+    fenix: true,
+  );
+
+  Get.lazyPut<ApiClient>(
+        () => DioApiClient(),
+    fenix: true,
+  );
+
+
   runApp(const MyApp());
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
@@ -59,18 +78,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 800),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (_, child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: child,
-          initialRoute: AppPages.INITIAL,
-          getPages: AppPages.routes,
-        );
-      },
+    return GlobalLoaderOverlay(
+      useDefaultLoading: true,
+      overlayColor: Colors.black54,
+      child: ScreenUtilInit(
+        designSize: const Size(360, 800),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: child,
+            initialRoute: AppPages.INITIAL,
+            getPages: AppPages.routes,
+          );
+        },
+      ),
     );
   }
 }
