@@ -6,7 +6,6 @@ import '../../../model/product_list_model.dart';
 import '../../../network/api_client.dart';
 
 class HomeController extends GetxController {
-
   final _apiHelper = Get.find<ApiClient>();
   RxList<Product>? products = <Product>[].obs;
 
@@ -39,7 +38,10 @@ class HomeController extends GetxController {
         Get.toNamed(Routes.LOGIN);
         break;
       case AppString.productDetail:
-        Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {'productName': products?[index!].title});
+        Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {
+          'productName': products?[index!].title,
+          'productId': products?[index!].id,
+        });
       default:
         Get.back();
     }
@@ -52,7 +54,7 @@ class HomeController extends GetxController {
       final data = ProductListModel.fromJson(response.data);
       products?.value = data.products ?? [];
     } else {
-      ///Add Snackbar
+      ///Add Snack-bar
     }
   }
 }

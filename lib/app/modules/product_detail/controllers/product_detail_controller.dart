@@ -1,26 +1,35 @@
 import 'package:get/get.dart';
 
+import '../../../model/product_list_model.dart';
+import '../../../network/api_client.dart';
+
 class ProductDetailController extends GetxController {
-  //TODO: Implement ProductDetailController
 
   RxString name = ''.obs;
+  RxInt id = 0.obs;
+  RxBool isLoading = false.obs;
+  final _apiHelper = Get.find<ApiClient>();
+  Rx<Product> product = Product().obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     name.value = Get.arguments['productName'];
+    id.value = Get.arguments['productId'];
+    getProduct();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Future getProduct() async {
+    isLoading.value = true;
+    final response = await _apiHelper.product(id.value);
+
+    if (response != null) {
+      final data = Product.fromJson(response.data);
+      product.value = data;
+    } else {
+      ///Add Snack-bar
+    }
+    isLoading.value = false;
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

@@ -1,3 +1,4 @@
+import 'package:e_shop/app/utils/app_color.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -79,8 +80,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlobalLoaderOverlay(
-      useDefaultLoading: true,
+      useDefaultLoading: false,
       overlayColor: Colors.black54,
+      overlayWidget:  const Center(
+        child: CircularProgressIndicator(
+          strokeWidth: 4,
+          color: AppColor.color0E101B,
+        ),
+      ),
       child: ScreenUtilInit(
         designSize: const Size(360, 800),
         minTextAdapt: true,
