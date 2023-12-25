@@ -3,6 +3,8 @@ import 'package:e_shop/app/utils/app_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../network/api_client.dart';
+
 class AddAProductController extends GetxController {
   late TextEditingController pNameController;
   late TextEditingController descriptionController;
@@ -12,6 +14,7 @@ class AddAProductController extends GetxController {
   late TextEditingController categoryController;
   late TextEditingController ratingController;
   late TextEditingController stockController;
+  final _apiHelper = Get.find<ApiClient>();
 
   @override
   void onInit() {
@@ -88,6 +91,34 @@ class AddAProductController extends GetxController {
         AppString.pleaseEnterStock,
         backgroundColor: AppColor.colorCECECE,
       );
-    } else {}
+    } else {
+      addProduct();
+    }
   }
+
+  Future addProduct() async {
+    final map = {
+      "title": pNameController.text,
+      "description": descriptionController.text,
+      "price": priceController.text,
+      "discountPercentage": discountController.text,
+      "rating": ratingController.text,
+      "stock": stockController.text,
+      "brand": brandController.text,
+      "category": categoryController.text,
+    };
+
+    final response = await _apiHelper.productAdd(map);
+
+    if (response != null) {
+      Get.snackbar(
+        'Success!',
+        'Product added successfully',
+        backgroundColor: AppColor.colorCECECE,
+      );
+    } else {
+      ///Add Snack-bar
+    }
+  }
+
 }

@@ -102,4 +102,33 @@ class DioApiClient implements ApiClient {
     return response;
   }
 
+  @override
+  Future<Response?> productAdd(result) async {
+    _removeAuthorizationTokenFromHeader();
+    final response = await _dio.directPostApi(
+      ApiConstant.productAdd,
+      body: result
+    );
+    return response;
+  }
+
+  @override
+  Future<Response?> productUpdate(url, result) async {
+    _removeAuthorizationTokenFromHeader();
+    final response = await _dio.putApi(
+        '${ApiConstant.productList}/$url',
+      body: result
+    );
+    return response;
+  }
+
+  @override
+  Future<Response?> productDelete(result) async {
+    _removeAuthorizationTokenFromHeader();
+    final response = await _dio.deleteApi(
+      '${ApiConstant.productList}/$result',
+    );
+    return response;
+  }
+
 }

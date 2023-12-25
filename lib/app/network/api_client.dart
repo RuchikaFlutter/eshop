@@ -8,5 +8,8 @@ abstract class ApiClient {
 
   Future<Response?> productList();
   Future<Response?> product(result);
+  Future<Response?> productAdd(result);
+  Future<Response?> productUpdate(url, result);
+  Future<Response?> productDelete(result);
 
 }

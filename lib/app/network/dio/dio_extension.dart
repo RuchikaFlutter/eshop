@@ -29,6 +29,24 @@ extension DioExtension on Dio {
     return response;
   }
 
+  Future<Response?> deleteApi(
+    String path,) async {
+    get_package.Get.context!.loaderOverlay.show();
+    Response? response;
+
+    try {
+      response = await delete(
+        path,
+      );
+    } on DioException catch (e) {
+      _showErrorSnacbar(e);
+    } finally {
+      get_package.Get.context!.loaderOverlay.hide();
+    }
+
+    return response;
+  }
+
   Future<Response?> directPostApi(
     String path, {
     dynamic body,
