@@ -1,6 +1,8 @@
 import 'package:e_shop/app/routes/app_pages.dart';
 import 'package:e_shop/app/utils/app_string.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../model/product_list_model.dart';
 import '../../../network/api_client.dart';
@@ -8,6 +10,9 @@ import '../../../network/api_client.dart';
 class HomeController extends GetxController {
   final _apiHelper = Get.find<ApiClient>();
   RxList<Product>? products = <Product>[].obs;
+
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+  late SharedPreferences _preferences;
 
   @override
   void onInit() {
@@ -35,7 +40,7 @@ class HomeController extends GetxController {
         Get.toNamed(Routes.DELETE_A_PRODUCT);
         break;
       case AppString.signOut:
-        Get.toNamed(Routes.LOGIN);
+        signOut();
         break;
       case AppString.productDetail:
         Get.toNamed(Routes.PRODUCT_DETAIL, arguments: {
@@ -45,6 +50,13 @@ class HomeController extends GetxController {
       default:
         Get.back();
     }
+  }
+
+  void signOut() async {
+    _preferences = await SharedPreferences.getInstance();
+    _preferences.clear();
+    await googleSignIn.signOut();
+    Get.toNamed(Routes.LOGIN);
   }
 
   Future getProductList() async {

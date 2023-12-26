@@ -184,7 +184,7 @@ class LoginView extends GetView<LoginController> {
           ),
           VerticalGap(),
           IconButton(
-              icon: const FaIcon(FontAwesomeIcons.google), onPressed: () {}),
+              icon: const FaIcon(FontAwesomeIcons.google), onPressed: () => controller.signInWithGoogle()),
         ],
       ),
     );
