@@ -44,7 +44,7 @@ class LoginController extends GetxController {
 
       _preferences = await SharedPreferences.getInstance();
       _preferences.setString("uID", user?.uid ?? '');
-
+      onTapSignIn();
     } catch (e) {
       debugPrint(e.toString());
     }
